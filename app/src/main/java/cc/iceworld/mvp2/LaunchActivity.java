@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import cc.iceworld.mvp2.demo.DemoActivity;
-import cc.iceworld.mvp2.demo.DemoDialogFragment;
-import cc.iceworld.mvp2.demo.DemoFragment;
+import cc.iceworld.mvp2.presenter.activity.DemoActivity;
+import cc.iceworld.mvp2.presenter.dialog.DemoDialogFragment;
+import cc.iceworld.mvp2.presenter.fragment.DemoFragment;
 
 /**
  * Created by cxx on 16-6-24.

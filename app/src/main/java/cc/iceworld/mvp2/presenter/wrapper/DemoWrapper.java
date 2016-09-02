@@ -1,5 +1,8 @@
-package cc.iceworld.mvp2.demo;
+package cc.iceworld.mvp2.presenter.wrapper;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,18 +12,23 @@ import cc.iceworld.mvp2.api.IDemo;
 import cc.iceworld.mvp2.api.ILoginModel;
 import cc.iceworld.mvp2.bean.User;
 import cc.iceworld.mvp2.model.LoginModel;
-import cc.iceworld.mvp2.net.WeakCallback;
-import cc.iceworld.mvp2.presenter.activity.BaseActivity;
+import cc.iceworld.mvp2.toolbox.net.WeakCallback;
+import cc.iceworld.mvp2.view.DemoView;
 
 
 /**
- * Created by cxx on 16-6-23.
+ * Created by cxx on 16/6/26.
  * xx.ch@outlook.com
  */
-public class DemoActivity extends BaseActivity<IDemo.View> implements IDemo.Presenter {
+public class DemoWrapper extends BaseWrapper<IDemo.View> implements IDemo.Presenter {
     private ILoginModel mModel = new LoginModel();
     private String mUsername;
     private String mPassword;
+    private Dialog mDelegate;
+
+    public DemoWrapper(@NonNull Context context) {
+        super(context);
+    }
 
     @Override
     protected void initData(@Nullable Bundle savedInstanceState) {
@@ -77,5 +85,19 @@ public class DemoActivity extends BaseActivity<IDemo.View> implements IDemo.Pres
             mPassword = password;
         }
         return result;
+    }
+
+    public void show() {
+        create();
+        mDelegate.show();
+    }
+
+    private void create() {
+        if (mDelegate == null) {
+            mDelegate = new AlertDialog
+                    .Builder(mContext)
+                    .setView(mRootView)
+                    .create();
+        }
     }
 }

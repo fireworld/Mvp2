@@ -1,4 +1,4 @@
-package cc.iceworld.mvp2.demo;
+package cc.iceworld.mvp2.view;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,7 +15,6 @@ import cc.iceworld.mvp2.R;
 import cc.iceworld.mvp2.api.IDemo;
 import cc.iceworld.mvp2.bean.User;
 import cc.iceworld.mvp2.toolbox.FakeLayoutInflater;
-import cc.iceworld.mvp2.view.BaseView;
 
 
 /**

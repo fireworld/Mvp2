@@ -2,7 +2,7 @@ package cc.iceworld.mvp2.api;
 
 
 import cc.iceworld.mvp2.bean.User;
-import cc.iceworld.mvp2.net.Callback;
+import cc.iceworld.mvp2.toolbox.net.Callback;
 
 /**
  * Created by cxx on 16-7-21.

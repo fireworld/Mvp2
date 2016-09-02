@@ -1,4 +1,4 @@
-package cc.iceworld.mvp2.demo;
+package cc.iceworld.mvp2.presenter.dialog;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,16 +8,16 @@ import android.text.TextUtils;
 import cc.iceworld.mvp2.api.IDemo;
 import cc.iceworld.mvp2.api.ILoginModel;
 import cc.iceworld.mvp2.bean.User;
+import cc.iceworld.mvp2.view.DemoView;
 import cc.iceworld.mvp2.model.LoginModel;
-import cc.iceworld.mvp2.net.WeakCallback;
-import cc.iceworld.mvp2.presenter.fragment.BaseFragment;
+import cc.iceworld.mvp2.toolbox.net.WeakCallback;
 
 
 /**
- * Created by cxx on 16-6-24.
+ * Created by cxx on 16-6-27.
  * xx.ch@outlook.com
  */
-public class DemoFragment extends BaseFragment<IDemo.View> implements IDemo.Presenter {
+public class DemoDialogFragment extends BaseDialogFragment<IDemo.View> implements IDemo.Presenter {
     private ILoginModel mModel = new LoginModel();
     private String mUsername;
     private String mPassword;
